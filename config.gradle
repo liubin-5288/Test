@@ -1,0 +1,149 @@
+//统一管理第三方类依赖
+def tinkerVersion = "1.7.7"
+
+def daagerVersionCode = "2.8"
+def retorfitVersionCode = "2.1.0"
+
+def butterknifeVersionCode = "8.4.0"
+
+ext {
+    android = [
+//            buildToolsVersion: "25.0.2",
+//            compileSdkVersion: 25,
+//            minSdkVersion    : 15,
+//            targetSdkVersion : 21,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    dependencies = [
+     /***************************************公共的**************************************************/
+
+        "appcompat-v7"                         : 'com.android.support:appcompat-v7:25.0.0',
+        "junit"                                : 'junit:junit:4.12',
+            //我们最小19，所以可以忽略v4
+//        "support-v4"                           : 'com.android.support:support-v4:23.1.1',
+        "recyclerview-v7"                      : 'com.android.support:recyclerview-v7:25.0.0',
+        //测试用
+        "test-rules"                           : 'com.android.support.test:rules:0.5',
+        "test-runner"                          : 'com.android.support.test:runner:0.5',
+        "espresso-core"                        : 'com.android.support.test.espresso:espresso-core:2.1',
+
+     /****************************************elinklibrary*****************************************************/
+
+     //retrofit配置
+     "retrofit"                                : "com.squareup.retrofit2:retrofit:${retorfitVersionCode}",
+     //添加gson实体类
+     "retorfit-converter-gson"                 : "com.squareup.retrofit2:converter-gson:${retorfitVersionCode}",
+     //添加string返回
+     "retrofit-converter-scalars"              : "com.squareup.retrofit2:converter-scalars:${retorfitVersionCode}",
+     //添加Oservble支持
+     "retorfit-adapter-rxjava"                 : "com.squareup.retrofit2:adapter-rxjava:${retorfitVersionCode}",
+
+     //rxjava & rxandroid
+     "rxjava"                                  : 'io.reactivex:rxjava:1.2.3',
+     "rxandroid"                               : 'io.reactivex:rxandroid:1.2.1',
+
+     //ok3网络请求库
+     "ok3-logining-interceptor"                : 'com.squareup.okhttp3:logging-interceptor:3.1.2',
+     //添加cookie
+     "okhttp-urlconnection"                    : 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0',
+
+
+
+     //NiewGridView
+     "photoview-library"                       : 'com.github.chrisbanes.photoview:library:1.2.4',
+
+    //TabLayout Lib  https://github.com/H07000223/FlycoTabLayout
+     "nineoldandroids-library"                 : 'com.nineoldandroids:library:2.4.0',
+     "FlycoRoundView_Lib"                      : 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar',
+     "FlycoTabLayout_Lib"                      : 'com.flyco.tablayout:FlycoTabLayout_Lib:1.5.0@aar',
+
+
+//     "fastJson"                                : 'libs/fastjson-1.2.1.jar',
+
+    //二维码
+     "core"                                    : 'libs/core.jar',
+     "commons-codec"                           : 'libs/commons-codec-1.5.jar',
+
+     //asynchttpclient
+     "asynchttpclient"                         : 'libs/android-async-http-1.4.6.jar',
+
+     "httpcore"                                : 'libs/httpcore-4.1.4.jar',
+
+     "IntentAPI"                               : 'libs/IntentAPI-6.4.3.jar',
+     // 图片加载库   https://github.com/nanchen2251/CompressHelper
+     "CompressHelper"                          : 'com.github.nanchen2251:CompressHelper:1.0.3',
+//     "gaodemap"                                : 'libs/AMap2DMap_4.2.0_AMapSearch_5.0.0_AMapLocation_3.4.0_20170427.jar',
+
+
+
+
+     /****************************************inspection2*****************************************************/
+
+     //dagger2
+     "dagger2"                              : "com.google.dagger:dagger:${daagerVersionCode}",
+     "dagger2-compiler"                     : "com.google.dagger:dagger-compiler:${daagerVersionCode}",
+
+     //butterknife注解类
+     "butterknife"                          : "com.jakewharton:butterknife:${butterknifeVersionCode}",
+     "butterknife-compiler"                 : "com.jakewharton:butterknife-compiler:${butterknifeVersionCode}",
+
+     //RxBinding
+     "rxbinding"                            : 'com.jakewharton.rxbinding:rxbinding:1.0.0',
+     //leakcanary 内存泄露检测工具
+     "leakcanary-android"                   : 'com.squareup.leakcanary:leakcanary-android:1.5',
+     "leakcanary-android-no-op"             : 'com.squareup.leakcanary:leakcanary-android-no-op:1.5',
+     "leakcanary-android-no-op-test"        : 'com.squareup.leakcanary:leakcanary-android-no-op:1.5',
+
+     //事件总线EventBus
+     "eventbus3.0"                          : 'org.greenrobot:eventbus:3.0.0',
+
+     //图片加载工具类
+     "glide"                                : 'com.github.bumptech.glide:glide:3.7.0',
+
+     //错误捕获替换原生的报错弹窗为一个activity，测试的时候使用，正式环境去掉(也可以不去，但是很诡异，到时权衡)
+     "customactivityoncrash"                : 'cat.ereza:customactivityoncrash:1.5.0',
+
+     //百度推送
+     "pushservice"                          : 'libs/pushservice-5.5.0.50.jar',
+
+     //科大讯飞
+     "msc"                                  : 'libs/Msc.jar',
+
+
+     //拼音库
+     "tinypinyin"                           : 'com.github.promeg:tinypinyin:1.0.0',
+
+     /*百度定位*/
+
+     "httpmime"                             : 'src/main/jniLibs/httpmime-4.1.2.jar' ,
+     "IndoorscapeAlbumPlugin"               : 'src/main/jniLibs/IndoorscapeAlbumPlugin.jar' ,
+
+
+     //6.0以上权限获取 (https://github.com/yanzhenjie/AndPermission)
+     "permission"                           : 'com.yanzhenjie:permission:1.0.4',
+
+     //tinker依赖开始
+     //可选，用于生成application类
+     "tinker-android-lib"                   : "com.tencent.tinker:tinker-android-lib:${tinkerVersion}",
+     "tinker-android-anno"                  : "com.tencent.tinker:tinker-android-anno:${tinkerVersion}",
+     "multidex"                             : 'com.android.support:multidex:1.0.1',
+     //tinker依赖结束
+
+
+     //pager
+     "packer-helper"                        : 'com.mcxiaoke.gradle:packer-helper:1.0.9',
+
+     "design"                               : 'com.android.support:design:25.0.0',
+
+     "activation"                           : 'src/main/jniLibs/activation.jar',
+     "additionnal"                          : 'src/main/jniLibs/additionnal.jar',
+     "mail"                                 : 'src/main/jniLibs/mail.jar',
+
+     "macaca"                               : 'macaca.webdriver.client:macacaclient:2.0.7',
+
+
+
+    ]
+}
