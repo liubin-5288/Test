@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -29,4 +32,17 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
+    def dependencies = rootProject.ext.dependencies
+
+    compile dependencies.dagger2
+    kapt dependencies.dagger2Compiler
+    compile dependencies.rxjava
+    compile dependencies.retrofit
+    compile dependencies.retorfitConverterGson
+    compile dependencies.retrofitConverterScalars
+    compile dependencies.retorfitAdapterRxjava
+    compile dependencies.ok3LoginingInterceptor
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.4"
+    compile  "org.jetbrains.kotlin:kotlin-reflect:1.0.4"
 }
