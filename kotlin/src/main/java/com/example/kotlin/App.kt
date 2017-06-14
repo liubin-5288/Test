@@ -12,23 +12,29 @@ import javax.inject.Inject
  */
 class App : Application() {
 
-    // 相当于 static
-    companion object{
-        // 延迟加载
-        lateinit var instance : App
-    }
-
 
     init {
         instance = this
     }
-    // lateinit只能在不可null的对象上使用，比须为var，不能为primitives（Int、Float之类）
-    lateinit var apiComponent: ApiComponent
+
 
     @Inject
+    lateinit var apiComponent: ApiComponent
+
     override fun onCreate() {
         super.onCreate()
         DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build().inject(this)
+    }
+
+    /**
+     * 相当于 java 中的 static 常量
+     */
+    companion object{
+        /**
+         * lateinit只能在不可null的对象上使用，比须为var，
+         * 不能为primitives（Int、Float之类）
+         */
+        lateinit var instance : App
     }
 
 

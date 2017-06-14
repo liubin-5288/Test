@@ -8,7 +8,7 @@ import dagger.Provides
  * Created by liubin on 2017/6/13.
  */
 @Module
-class AppModule(private var context: Context) {
+class AppModule(private val context: Context) {
 
     @Provides fun privodeContext() = context
 }

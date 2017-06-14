@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "com.example.kotlin"
@@ -30,8 +31,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
     def dependencies = rootProject.ext.dependencies
 
     compile dependencies.dagger2
@@ -43,6 +42,12 @@ dependencies {
     compile dependencies.retorfitAdapterRxjava
     compile dependencies.ok3LoginingInterceptor
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.4"
-    compile  "org.jetbrains.kotlin:kotlin-reflect:1.0.4"
+
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.4'
+    compile 'org.jetbrains.kotlin:kotlin-reflect:1.0.4'
+    compile 'com.android.support:design:25.3.1'
+    testCompile 'junit:junit:4.12'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
