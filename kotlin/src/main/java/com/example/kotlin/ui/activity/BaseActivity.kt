@@ -1,17 +1,19 @@
 package com.example.kotlin.ui.activity
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.View
+import com.example.baselibrary.BaseActivity
 import com.example.kotlin.R
+import com.example.kotlin.di.component.ApiComponent
+import com.example.kotlin.di.component.DaggerApiComponent
+import com.example.kotlin.di.module.ApiModule
+import com.example.kotlin.di.module.AppModule
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : BaseActivity() {
 
+//    lateinit var apiComponent: ApiComponent
 
     //初始化view
     abstract fun initView()
@@ -20,25 +22,24 @@ abstract class BaseActivity : AppCompatActivity() {
     //子页面布局Id
     abstract fun contentViewId() : Int
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
+//        apiComponent = DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build()
+//        apiComponent.inject(this)
         //添加子页面布局
         layoutInflater.inflate(contentViewId(),content_base)
         setSupportActionBar(setupToolbar(toolbar))
         initView()
         initData()
 
-//        val fab = findViewById(R.id.fab) as FloatingActionButton
-//        fab.setOnClickListener(View.OnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        })
     }
 
-    fun setupToolbar(toolbar: Toolbar) : Toolbar{
+    open fun setupToolbar(toolbar: Toolbar) : Toolbar{
         return toolbar
     }
+
 
 
 

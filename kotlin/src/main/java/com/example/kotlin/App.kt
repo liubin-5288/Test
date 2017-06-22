@@ -2,10 +2,8 @@ package com.example.kotlin
 
 import android.app.Application
 import com.example.kotlin.di.component.ApiComponent
-import com.example.kotlin.di.component.DaggerApiComponent
 import com.example.kotlin.di.module.ApiModule
 import com.example.kotlin.di.module.AppModule
-import javax.inject.Inject
 
 /**
  * Created by liubin on 2017/6/13.
@@ -18,12 +16,9 @@ class App : Application() {
     }
 
 
-    @Inject
-    lateinit var apiComponent: ApiComponent
 
     override fun onCreate() {
         super.onCreate()
-        DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build().inject(this)
     }
 
     /**

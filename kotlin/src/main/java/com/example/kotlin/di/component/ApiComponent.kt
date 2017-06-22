@@ -1,7 +1,7 @@
 package com.example.kotlin.di.component
 
-import com.example.kotlin.App
 import com.example.kotlin.di.module.ApiModule
+import com.example.kotlin.ui.activity.BaseActivity
 import dagger.Component
 
 /**
@@ -9,5 +9,5 @@ import dagger.Component
  */
 @Component(modules = arrayOf(ApiModule::class))
 interface ApiComponent {
-    fun inject(app: App)
+    fun inject(app: BaseActivity)
 }

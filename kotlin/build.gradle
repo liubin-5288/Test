@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
@@ -9,7 +9,7 @@ android {
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "com.example.kotlin"
+//        applicationId "com.example.kotlin"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -27,12 +27,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    def dependencies = rootProject.ext.dependencies
 
+    compile project(':baselibrary')
+
+    def dependencies = rootProject.ext.dependencies
     compile dependencies.dagger2
     kapt dependencies.dagger2Compiler
     compile dependencies.rxjava
@@ -41,13 +39,10 @@ dependencies {
     compile dependencies.retrofitConverterScalars
     compile dependencies.retorfitAdapterRxjava
     compile dependencies.ok3LoginingInterceptor
-
-
-
-    compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.4'
     compile 'org.jetbrains.kotlin:kotlin-reflect:1.0.4'
     compile 'com.android.support:design:25.3.1'
-    testCompile 'junit:junit:4.12'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //    compile 'javax.annotation:javax.annotation-api:1.2'
+
 }

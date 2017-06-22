@@ -1,1 +1,1 @@
-include ':app', ':customview', ':kotlin'
+include ':app', ':customview', ':kotlin', ':rxjava', ':baselibrary'

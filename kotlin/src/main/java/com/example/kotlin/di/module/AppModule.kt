@@ -3,6 +3,7 @@ package com.example.kotlin.di.module
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 /**
  * Created by liubin on 2017/6/13.
