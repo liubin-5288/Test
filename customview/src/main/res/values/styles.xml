@@ -8,4 +8,34 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <declare-styleable name="LineView">
+
+        <!--线 内型-->
+        <attr name="lineMode" format="enum">
+            <enum name="lineNormal" value="0"/>
+            <enum name="lineDashed" value="1"/>
+            <enum name="lineDot" value="2"/>
+        </attr>
+        
+        <!--线 方向-->
+        <attr name="lineOrientation" format="enum">
+            <enum name="vertical" value="1" />
+            <enum name="horizontal" value="0" />
+        </attr>
+
+        <!--线 间距 -->
+        <attr name="lineSpace" format="dimension|reference" />
+
+        <!--颜色-->
+        <attr name="lineBackground" format="color|reference" />
+        <!--宽度-->
+        <attr name="lineWidth" format="dimension|reference" />
+        <!--横线装饰物-->
+        <attr name="lineDrawable" format="integer|reference" />
+
+
+    </declare-styleable>
+
+
 </resources>
