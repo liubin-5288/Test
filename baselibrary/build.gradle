@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'android-apt'
+//apply plugin: 'android-apt'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
@@ -36,6 +37,12 @@ dependencies {
         exclude module: 'guava'
     }
     compile 'com.android.support:appcompat-v7:25.3.1'
+
+
+    compile thirdDependencies.dagger2
+    annotationProcessor (thirdDependencies.dagger2Compiler){
+        exclude module: 'dagger'
+    }
 
 
     compile thirdDependencies.rxjava

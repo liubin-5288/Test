@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
@@ -31,7 +31,7 @@ dependencies {
     compile project(':baselibrary')
 
     def dependencies = rootProject.ext.dependencies
-    compile dependencies.dagger2
+//    compile dependencies.dagger2
     kapt dependencies.dagger2Compiler
     compile dependencies.rxjava
     compile dependencies.retrofit
@@ -39,8 +39,8 @@ dependencies {
     compile dependencies.retrofitConverterScalars
     compile dependencies.retorfitAdapterRxjava
     compile dependencies.ok3LoginingInterceptor
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.4'
-    compile 'org.jetbrains.kotlin:kotlin-reflect:1.0.4'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.1.3-2'
+    compile 'org.jetbrains.kotlin:kotlin-reflect:1.1.3-2'
     compile 'com.android.support:design:25.3.1'
     //    provided 'org.glassfish:javax.annotation:10.0-b28'
     //    compile 'javax.annotation:javax.annotation-api:1.2'

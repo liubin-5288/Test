@@ -8,25 +8,17 @@
     android:orientation="vertical"
     tools:context="com.example.test.MainActivity">
 
-    <Button
-        android:id="@+id/code"
+    <EditText
+        android:id="@+id/et_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="code"
-        />
+        android:layout_height="wrap_content" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="kotlin"
-        android:id="@+id/btn_kotlin"
+        android:onClick="onClick"
+        android:text="注册监听"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="customview"
-        android:id="@+id/btn_customview"
-        />
 
 </LinearLayout>

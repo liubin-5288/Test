@@ -20,6 +20,7 @@ class MainActivity : BaseActivity() {
         text.setTextColor(Color.RED)
         val text = text.text.toString().trim()
         Log.d("initView",text)
+
     }
 
     override fun initData() {

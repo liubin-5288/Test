@@ -11,14 +11,10 @@ import com.example.kotlin.di.module.AppModule
 class App : Application() {
 
 
-    init {
-        instance = this
-    }
-
-
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
     }
 
     /**
@@ -30,6 +26,8 @@ class App : Application() {
          * 不能为primitives（Int、Float之类）
          */
         lateinit var instance : App
+
+
     }
 
 
